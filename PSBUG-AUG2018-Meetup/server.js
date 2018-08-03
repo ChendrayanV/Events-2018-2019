@@ -18,12 +18,16 @@ var InsertEmployeeRecord = require('./routes/insertEmployeeRecord')
 //Routes for RESTful API
 var employeeRecord_api = require('./routes/employeeRecord-api')
 
+// GET
 app.use('/', index);
 app.use('/employeeSearch', employeeSearch)
+app.use('/insertRecord', insertRecord)
+
+// POST
 app.post('/employeeRecord', employeeRecord)
 app.post('/employeeRecord-api', employeeRecord_api)
-app.use('/insertRecord', insertRecord)
 app.post('/InsertEmployeeRecord', InsertEmployeeRecord)
+
 
 
 app.listen(3000)
