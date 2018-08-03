@@ -1,0 +1,59 @@
+doctype html
+style.
+    input[type=text],
+    select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    body {
+    font-family: calibri;
+    }
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Calibri;
+    }
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+    div {
+    border-radius: 5px;
+    /*background-color: #f2f2f2;*/
+    /*background-color: darkgrey;*/
+    padding: 20px;
+    }
+hr(style='height:1px;border:none;color:#333;background-color:#333;')
+p(style='text-align:right') Welcome 
+    label #{sdAgentID}
+hr(style='height:1px;border:none;color:#333;background-color:#333;')
+br
+div
+    form(action='/InsertEmployeeRecord', method='post')
+        fieldset
+            legend(style='text-align: center') New Employee
+            label(for='employeeNumber') Employee Number
+            input#employeeNumber(type='text', name='employeeNumber', style='font-family: calibri')
+            label(for='firstName') First Name
+            input#firstName(type='text', name='firstname', style='font-family: calibri')
+            label(for='lastName') Last Name
+            input#lastName(type='text', name='lastname', style='font-family: calibri')
+            label(for='displayName') Display Name
+            input#displayName(type='text', name='displayname', style='font-family: calibri')
+            label(for='email') Email
+            input#email(type='text', name='email', style='font-family: calibri')
+            label(for='email') Country
+            input#email(type='text', name='country', style='font-family: calibri')
+            label(for='email') Mobile
+            input#email(type='text', name='mobile', style='font-family: calibri')
+            input(type='submit', value='Submit')

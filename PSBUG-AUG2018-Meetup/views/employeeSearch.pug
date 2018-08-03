@@ -1,0 +1,47 @@
+
+doctype html
+style.
+    input[type=text],
+    select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    body {
+    font-family: calibri;
+    }
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Calibri;
+    }
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+    div {
+    border-radius: 5px;
+    /*background-color: #f2f2f2;*/
+    /*background-color: darkgrey;*/
+    padding: 20px;
+    }
+hr(style='height:1px;border:none;color:#333;background-color:#333;')
+p(style='text-align:right') Welcome 
+    label #{sdAgentID}
+hr(style='height:1px;border:none;color:#333;background-color:#333;')
+br
+div
+    form(action='/employeeRecord', method='post')
+        fieldset
+            legend(style='text-align: center') Employee Search
+            input#loginID(type='text', name='employeeNumber', placeholder='Employee Number....')
+            input(type='submit', value='Submit')

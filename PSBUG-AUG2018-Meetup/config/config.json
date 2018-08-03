@@ -1,0 +1,21 @@
+{
+    "twilio": {
+        "ACCOUNT_SID": "ACaee38ec4a579d9b31205d2b83fa8857f",
+        "AUTH_TOKEN": "ee4e25bf98172f046c24ee164f39d51f",
+        "FROM": "+14232056817",
+        "TO": "+919620178698",
+        "OPERATIONS": {
+            "MESSAGES": {
+                "CREATE-A-MESSAGE": {
+                    "POST": "https://api.twilio.com/2010-04-01/Accounts/ACaee38ec4a579d9b31205d2b83fa8857f/Messages.json"
+                },
+                "DELETE-A-MESSAGE": {
+                    "DELETE": "https://api.twilio.com/2010-04-01/Accounts/ACaee38ec4a579d9b31205d2b83fa8857f/Messages/"
+                },
+                "VIEW-A-MESSAGE":{
+                    "GET": "https://api.twilio.com/2010-04-01/Accounts/ACaee38ec4a579d9b31205d2b83fa8857f/Messages/"
+                }
+            }
+        }
+    }
+}
