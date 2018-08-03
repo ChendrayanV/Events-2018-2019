@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express')
 var app = express();
 var path = require('path');
 var bodyparser = require('body-parser');
@@ -23,8 +23,9 @@ app.use('/employeeSearch', employeeSearch)
 app.post('/employeeRecord', employeeRecord)
 app.post('/employeeRecord-api', employeeRecord_api)
 app.use('/insertRecord', insertRecord)
-app.post('/InsertEmployeeRecord' , InsertEmployeeRecord)
+app.post('/InsertEmployeeRecord', InsertEmployeeRecord)
 
 
 app.listen(3000)
 console.log("Your application is running on port 3000")
+
