@@ -1,0 +1,16 @@
+{
+  "name": "spsevents-sep2018",
+  "version": "1.0.0",
+  "description": "Build Resume using the Node.js, PowerShell, PUG, Express - SharePoint Online User Profile Application is the datasource! ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Chendrayan Venkatesan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
