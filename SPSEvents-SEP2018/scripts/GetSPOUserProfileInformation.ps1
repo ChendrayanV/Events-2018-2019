@@ -16,7 +16,7 @@ foreach ($spoUser in $spoUsers) {
     $spoUserProfile = $spoPeopleManager.GetPropertiesFor($spoUser.LoginName)
     $spoClientContext.Load($spoUserProfile)
     $spoClientContext.ExecuteQuery()
-    if ($spoUserProfile.Email -isnot $null -and $spoUserProfile.UserProfileProperties['FirstName'] -eq 'Chendrayan') {
+    if ($spoUserProfile.Email -ne $null -and $spoUserProfile.UserProfileProperties['FirstName'] -eq 'Chendrayan') {
         $result = [pscustomobject]@{
             FirstName    = $spoUserProfile.UserProfileProperties['FirstName']
             LastName     = $spoUserProfile.UserProfileProperties['LastName']

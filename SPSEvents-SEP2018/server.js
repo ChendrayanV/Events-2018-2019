@@ -7,8 +7,10 @@ app.set('view engine', 'pug');
 
 var index = require('./routes/index');
 var resume = require('./routes/resume')
+var home = require('./routes/home')
 app.use('/', index);
 app.use('/resume', resume);
+app.use('/home', home)
 
 app.listen(3000);
 console.log("Your Application is running on port 3000");
