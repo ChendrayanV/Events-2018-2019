@@ -1,0 +1,81 @@
+
+doctype html
+head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    style.
+        body {
+        font-family: Calibri;
+        }
+        /* Style the tab */
+        .tab {
+        overflow: hidden;
+        border: 1px solid #000000;
+        background-color: #00FA9A;
+        }
+        /* Style the buttons inside the tab */
+        .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        }
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+        background-color: #00FF00;
+        }
+        /* Create an active/current tablink class */
+        .tab button.active {
+        background-color: #00FA9A;
+        }
+        /* Style the tab content */
+        .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #000000;
+        border-top: none;
+        }
+h2(style='text-align: center') I &hearts; PowerShell
+.tab
+    button.tablinks(onclick="openProfile(event, 'AboutMe')") AboutMe
+    button.tablinks(onclick="openProfile(event, 'Skills')") Skills
+    button.tablinks(onclick="openProfile(event, 'Projects')") Projects
+#AboutMe.tabcontent
+    p(style='text-align: center')
+        img(src=spoProfileInformation.PictureURL)
+        h3(style='text-align: center') Mobile: #{spoProfileInformation.WorkPhone}
+        p(style='text-align: center')
+            a(href="mailto:" + spoProfileInformation.WorkEmail) #{spoProfileInformation.WorkEmail} 
+    h3 AboutMe
+    p #{spoProfileInformation.AboutMe}
+#Skills.tabcontent
+    h3 Skills
+    table
+        tbody
+            each Skill in spoProfileInformation.Skills
+                tr
+                    td=Skill 
+#Projects.tabcontent
+    h3 Past Projects 
+    table
+        tbody
+            each Projects in spoProfileInformation.PastProjects
+                tr
+                    td=Projects
+script.
+    function openProfile(evt, fieldName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[ i ].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[ i ].className = tablinks[ i ].className.replace(" active", "");
+    }
+    document.getElementById(fieldName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
