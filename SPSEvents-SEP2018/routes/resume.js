@@ -12,7 +12,7 @@ router.get('/', function (request, response) {
             spoProfileInformation: result
         })
     });
-    
+
 });
 
 module.exports = router;
