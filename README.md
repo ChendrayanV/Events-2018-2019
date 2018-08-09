@@ -2,7 +2,7 @@
 
 Repository to share event contents
 
-## BITPRO + PowerShell User Group
+## BITPRO + PowerShell User Group | [Bangalore 2018](https://www.meetup.com/BangaloreITProUG/events/rnmtzpyxlbgb/)
 
 **August 4, 2018**: [Web Framework for PowerShell](https://github.com/ChendrayanV/Events-2018-2019/blob/master/PSBUG-AUG2018-Meetup/Web%20Framework%20for%20PowerShell.pptx)
 
