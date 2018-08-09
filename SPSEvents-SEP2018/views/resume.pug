@@ -6,6 +6,12 @@ head
         body {
         font-family: Century Gothic;
         }
+        th {
+            text-align: left;
+        }
+        td {
+            text-align: center;
+        }
         /* Style the tab */
         .tab {
         overflow: hidden;
@@ -45,6 +51,7 @@ h2(style='text-align: center') I &hearts; PowerShell
     button.tablinks(onclick="openProfile(event, 'AboutMe')") AboutMe
     button.tablinks(onclick="openProfile(event, 'Skills')") Skills
     button.tablinks(onclick="openProfile(event, 'Projects')") Projects
+    button.tablinks(onclick="openProfile(event, 'Profile')") Profile
 #AboutMe.tabcontent
     p(style='text-align: center')
         img(src=spoProfileInformation.PictureURL)
@@ -67,6 +74,22 @@ h2(style='text-align: center') I &hearts; PowerShell
             each Projects in spoProfileInformation.PastProjects
                 tr
                     td=Projects
+#Profile.tabcontent
+    h3 My Profile
+    table
+        tbody
+            tr
+                th First Name 
+                td #{spoProfileInformation.FirstName}
+            tr 
+                th Last Name
+                td #{spoProfileInformation.LastName}
+            tr 
+                th Work Email
+                td #{spoProfileInformation.WorkEmail}
+            tr 
+                th Mobile Phone
+                td #{spoProfileInformation.WorkPhone}
 script.
     function openProfile(evt, fieldName) {
     var i, tabcontent, tablinks;
