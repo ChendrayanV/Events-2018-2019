@@ -4,7 +4,7 @@ head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     style.
         body {
-        font-family: Calibri;
+        font-family: Century Gothic;
         }
         /* Style the tab */
         .tab {
@@ -49,10 +49,10 @@ h2(style='text-align: center') I &hearts; PowerShell
         h3(style='text-align: center') Mobile: #{spoProfileInformation.WorkPhone}
         p(style='text-align: center')
             a(href="mailto:" + spoProfileInformation.WorkEmail) #{spoProfileInformation.WorkEmail} 
-    h3 AboutMe
+    h3 About Me
     p #{spoProfileInformation.AboutMe}
 #Skills.tabcontent
-    h3 Skills
+    h3 Proficient Skills
     table
         tbody
             each Skill in spoProfileInformation.Skills

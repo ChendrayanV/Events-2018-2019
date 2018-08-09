@@ -34,4 +34,4 @@ foreach ($spoUser in $spoUsers) {
         $collection += $result
     }
 }
-$collection | ConvertTo-Json -Compress
+$collection | ConvertTo-Json
