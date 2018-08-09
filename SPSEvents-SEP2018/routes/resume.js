@@ -7,8 +7,8 @@ router.get('/', function (request, response) {
     child = spawn('powershell.exe',
         [ "C:\\Projects\\Events-2018-2019\\SPSEvents-SEP2018\\scripts\\GetSPOUserProfileInformation.ps1" ]);
     child.stdout.on('data', function (data) {
-        var result = JSON.parse(data);
-        console.log(result)
+        var result = JSON.parse(data.toString())
+        console.log(result);
         response.render('resume', {
             spoProfileInformation: result
         })
