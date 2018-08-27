@@ -8,13 +8,12 @@ router.get('/', function (request, response) {
     child = spawn('powershell.exe',
         [ "C:\\Projects\\Events-2018-2019\\SPSEvents-SEP2018\\scripts\\SystemInformation.ps1" ])
     child.stdout.on('data', function (data) {
-        var result = JSON.parse(data.toString())
+        var result = JSON.parse(data)
         response.render('systeminformation', {
             BIOSVersion: result[ 'BIOSVersion' ],
             BIOSManufacturer: result[ 'BIOSManufacturer' ],
-            DeviceID: result[ 'DeviceID' ],
-            Size: result[ 'Size' ],
-            FreeSpace: result[ 'FreeSpace' ],
+            TimeZone: result[ 'TimeZone' ],
+            StandardName: result[ 'StandardName' ],
             OSCaption: result[ 'OSCaption' ]
         })
     })

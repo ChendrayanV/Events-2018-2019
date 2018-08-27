@@ -11,7 +11,7 @@ $TimeZone = Get-WmiObject -Class Win32_TimeZone |
     Select-Object Caption , StandardName
 $Disk = Get-WmiObject -Class Win32_LogicalDisk -Filter DriveType=3 |  
     Select-Object SystemName , DeviceID , 
-@{Name = "size(GB)"; Expression = {“{0:N1}" -f ($_.size / 1gb)}}, @{Name = "freespace(GB)"; Expression = {“{0:N1}" -f ($_.freespace / 1gb)}}
+@{Name = "size"; Expression = {“{0:N1}" -f ($_.size / 1gb)}}, @{Name = "freespace"; Expression = {“{0:N1}" -f ($_.freespace / 1gb)}}
 [pscustomobject]@{
     Model            = $ComputerSystem.Model
     ConfigPath       = $BootConfiguration.ConfigurationPath
@@ -22,7 +22,4 @@ $Disk = Get-WmiObject -Class Win32_LogicalDisk -Filter DriveType=3 |
     OSLanguage       = $OS.OSLanguage
     TimeZone         = $TimeZone.Caption
     StandardName     = $TimeZone.StandardName
-    DeviceID         = $Disk.DeviceID
-    Size             = $Disk.'size(GB)' + " GB" 
-    FreeSpace        = $Disk.'freespace(GB)' + " GB"
 } | ConvertTo-Json -Compress
