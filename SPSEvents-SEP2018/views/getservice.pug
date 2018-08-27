@@ -1,0 +1,42 @@
+doctype html
+head
+    style.
+        #services {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        #services td,
+        #services th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        }
+        #services tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
+        #services tr:hover {
+        background-color: #ddd;
+        }
+        #services th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+        }
+table#services
+    tbody
+        tr
+            th Name 
+            th DisplayName 
+            th Status 
+        each service in serviceResult
+            tr
+                if (service.Status == 1)
+                    td(style='background-color: brown; font-style: italic')=service.Name
+                    td(style='background-color: brown; font-style: italic')=service.DisplayName 
+                    td(style='background-color: brown; font-style: italic')=service.Status
+                else 
+                    td=service.Name 
+                    td=service.DisplayName 
+                    td=service.Status 

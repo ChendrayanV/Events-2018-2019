@@ -1,5 +1,6 @@
 Import-Module .\assemblies\Microsoft.SharePoint.Client.dll
 Import-Module .\assemblies\Microsoft.SharePoint.Client.UserProfiles.dll
+
 $userName = ""
 $adminPassword = "" | ConvertTo-SecureString -AsPlainText -Force
 $spoCredential = [Microsoft.SharePoint.Client.SharePointOnlineCredentials]::new($userName, $adminPassword)
