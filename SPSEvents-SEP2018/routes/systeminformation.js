@@ -8,8 +8,18 @@ router.get('/', function (request, response) {
     child = spawn('powershell.exe',
         [ "C:\\Projects\\Events-2018-2019\\SPSEvents-SEP2018\\scripts\\SystemInformation.ps1" ])
     child.stdout.on('data', function (data) {
-        //var result = JSON.parse(data.toString())
-        response.render('systeminformation')
+        var result = JSON.parse(data.toString())
+        response.render('systeminformation', {
+            BIOSVersion: result[ 'BIOSVersion' ],
+            BIOSManufacturer: result[ 'BIOSManufacturer' ],
+            DeviceID: result[ 'DeviceID' ],
+            Size: result[ 'Size' ],
+            FreeSpace: result[ 'FreeSpace' ],
+            OSCaption: result[ 'OSCaption' ]
+        })
+    })
+    child.stdout.on('end', function (end) {
+        console.log("You are so awesome!")
     })
 });
 

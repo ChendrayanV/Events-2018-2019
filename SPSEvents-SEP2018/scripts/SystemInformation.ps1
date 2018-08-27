@@ -25,4 +25,4 @@ $Disk = Get-WmiObject -Class Win32_LogicalDisk -Filter DriveType=3 |
     DeviceID         = $Disk.DeviceID
     Size             = $Disk.'size(GB)' + " GB" 
     FreeSpace        = $Disk.'freespace(GB)' + " GB"
-} | ConvertTo-Json
+} | ConvertTo-Json -Compress
