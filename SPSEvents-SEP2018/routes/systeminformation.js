@@ -8,8 +8,8 @@ router.get('/', function (request, response) {
     child = spawn('powershell.exe',
         [ "C:\\Projects\\Events-2018-2019\\SPSEvents-SEP2018\\scripts\\SystemInformation.ps1" ])
     child.stdout.on('data', function (data) {
-        var result = JSON.parse(data.toString())
-        BIOSVersion: result[ 'BIOSVersion' ]
+        //var result = JSON.parse(data.toString())
+        response.render('systeminformation')
     })
 });
 
