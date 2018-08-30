@@ -11,6 +11,7 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: Gadugi;
 }
 
 input[type=submit] {
@@ -26,10 +27,12 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #45a049;
+    font-family: Gadugi;
 }
 
 div {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    font-family: Gadugi;
 }

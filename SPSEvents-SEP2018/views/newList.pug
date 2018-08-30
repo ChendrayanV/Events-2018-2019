@@ -9,14 +9,16 @@ html(lang="en")
             include ./styles/forms.css
     body
         div
-            form(action='/action_page.php')
-                label(for='fname') Requester Name
-                input#fname(type='text', name='firstname', placeholder='Your name..')
-                label(for='lname') Last Name
-                input#lname(type='text', name='lastname', placeholder='Your last name..')
+            form(action='/createList')
+                
+                label(for='rName') Requester Name
+                input#fname(type='text', name='rName', value=rName)
+
+                label(for='lName') List Name
+                input#fname(type='text', name='lName', value=rName)
+
                 label(for='listTemplateType') List Template Type
                 select#country(name='listTemplateType')
-                    option(value='australia') Australia
-                    option(value='canada') Canada
-                    option(value='usa') USA
+                    option(value='GenericList') GenericList
+                    option(value='Announcements') Announcements
                 input(type='submit', value='Submit')
