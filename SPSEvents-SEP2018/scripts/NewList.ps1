@@ -45,5 +45,5 @@ $Web.Lists.Add($ListCreationInformation)
 $spoClientContext.ExecuteQuery()
 $spoClientContext.Dispose()
 
-Start-Sleep 10
+Start-Sleep 45
 
