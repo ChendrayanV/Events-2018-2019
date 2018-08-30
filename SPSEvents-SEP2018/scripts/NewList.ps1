@@ -64,4 +64,4 @@ $IncidentInformation = Invoke-RestMethod -Uri $Uri -Method Patch -Body $Body -Cr
     Incident_Sys_Id = $IncidentInformation.result.sys_id
     ListName        = $List.Title
     Created         = $List.Created
-} | ConvertTo-Json 
+} | ConvertTo-Json -Compress
