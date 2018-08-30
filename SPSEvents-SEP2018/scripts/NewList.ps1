@@ -9,7 +9,7 @@ param(
     [ValidateSet('GenericList' , 'Announcements')]
     $ListTemplateType
 )
-$config = [xml](.\config\config.xml)
+$config = [xml](Get-Content C:\Projects\Events-2018-2019\SPSEvents-SEP2018\config\config.xml)
 $admin = $config.config.snow.userName
 $password = $config.config.snow.password | ConvertTo-SecureString -AsPlainText -Force 
 $Credential = New-Object pscredential -ArgumentList ($admin, $password)
@@ -64,4 +64,4 @@ $IncidentInformation = Invoke-RestMethod -Uri $Uri -Method Patch -Body $Body -Cr
     Incident_Sys_Id = $IncidentInformation.result.sys_id
     ListName        = $List.Title
     Created         = $List.Created
-} | ConvertTo-Json
+} | ConvertTo-Json 
