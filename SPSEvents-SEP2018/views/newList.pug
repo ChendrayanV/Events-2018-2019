@@ -9,7 +9,7 @@ html(lang="en")
             include ./styles/forms.css
     body
         div
-            form(action='/createList')
+            form(action='/createList', method="posr")
                 
                 label(for='rName') Requester Name
                 input#fname(type='text', name='rName', value=rName)
