@@ -9,7 +9,7 @@ param(
     [ValidateSet('GenericList' , 'Announcements')]
     $ListTemplateType
 )
-$config = [xml](Get-Content C:\Projects\Events-2018-2019\SPSEvents-SEP2018\config\config.xml)
+$config = [xml](Get-Content .\config\config.xml)
 $admin = $config.config.snow.userName
 $password = $config.config.snow.password | ConvertTo-SecureString -AsPlainText -Force 
 $Credential = New-Object pscredential -ArgumentList ($admin, $password)

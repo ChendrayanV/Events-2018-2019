@@ -9,15 +9,15 @@ html(lang="en")
             include ./styles/forms.css
     body
         div
-            form(action='/createList', method="post")
+            form(action='/createList' method="post")
                 
-                label(for='rName') Requester Name
-                input#fname(type='text', name='rName', value=rName)
+                label(for='reqName') Requester Name
+                input#fname(type='text', name='rName')
 
-                label(for='lName') List Name
-                input#fname(type='text', name='lName', value=rName)
+                label(for='listName') List Name
+                input#fname(type='text', name='lName')
 
-                label(for='listTemplateType') List Template Type
+                label(for='listType') List Template Type
                 select#country(name='listTemplateType')
                     option(value='GenericList') GenericList
                     option(value='Announcements') Announcements
