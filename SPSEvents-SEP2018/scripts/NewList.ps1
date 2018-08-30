@@ -1,7 +1,11 @@
 param(
     [string]
-    $Caller_id =  "Chendrayan Venkatesan",
+    $Caller_id,
 
+    [string]
+    $ListName,
+
+    [Microsoft.SharePoint.Client.ListTemplateType]
     [ValidateSet('GenericList' , 'Announcements')]
     $ListTemplateType
 )
@@ -22,10 +26,6 @@ $Body = @{
     "assigned_to"       = "Chendrayan Venkatesan"
 } | ConvertTo-Json
 $IncidentResult = Invoke-RestMethod -Uri $Uri -Method Post -Body $Body -Credential $Credential -ContentType "application/json"
-<#[pscustomobject]@{
-    Incident_Number = $IncidentResult.result.number
-    State           = $IncidentResult.result.state 
-}#>
 
 Start-Sleep -Seconds 10 
 
@@ -39,11 +39,19 @@ $Web = $spoClientContext.Web
 $spoClientContext.Load($Web)
 $spoClientContext.ExecuteQuery()
 $ListCreationInformation = [Microsoft.SharePoint.Client.ListCreationInformation]::new()
-$ListCreationInformation.Title = "SPS-Events"
+$ListCreationInformation.Title = $ListName
 $ListCreationInformation.TemplateType = $ListTemplateType
-$Web.Lists.Add($ListCreationInformation)
+$Listc = $Web.Lists.Add($ListCreationInformation)
 $spoClientContext.ExecuteQuery()
 $spoClientContext.Dispose()
 
 Start-Sleep 45
 
+$List = $spoClientContext.Web.Lists.GetByTitle($ListName)
+$spoClientContext.Load($List)
+$spoClientContext.ExecuteQuery()
+[pscustomobject]@{
+    Incident_Number = $IncidentResult.result.Number
+    ListName        = $List.Title
+    Created         = $List.Created
+}
