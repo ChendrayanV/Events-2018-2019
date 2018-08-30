@@ -51,17 +51,17 @@ $Uri = "https://dev42835.service-now.com/api/now/table/incident/$($IncidentResul
 $Body = @{
     work_notes = @{
         ListName = $List.Title
-        Created = $List.Created
-        Notes = "Auto Closing the INC as per the requirement"
-        Contact = "chen@contoso.com"
+        Created  = $List.Created
+        Notes    = "Auto Closing the INC as per the requirement"
+        Contact  = "chen@contoso.com"
     }
-    state = "Resolved"
+    state      = "Resolved"
 } | ConvertTo-Json
 $IncidentInformation = Invoke-RestMethod -Uri $Uri -Method Patch -Body $Body -Credential $Credential
 [pscustomobject]@{
     Incident_Number = $IncidentInformation.result.Number
-    Incident_State = $IncidentInformation.result.state
+    Incident_State  = $IncidentInformation.result.state
     Incident_Sys_Id = $IncidentInformation.result.sys_id
-    ListName = $List.Title
-    Created = $List.Created
-}
+    ListName        = $List.Title
+    Created         = $List.Created
+} | ConvertTo-Json
