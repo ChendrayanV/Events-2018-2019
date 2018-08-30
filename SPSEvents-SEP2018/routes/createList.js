@@ -11,17 +11,17 @@ var ps = new shell({
 router.use(bodyparser.urlencoded({ extended: true }));
 
 router.post('/createList', function (request, response) {
-    ps.addCommand("./scripts/NewList.ps1", {
+    ps.addCommand("./scripts/NewList.ps1", [ {
         name: 'CallerId',
         value: request.body.rName
     }, {
-            name: 'ListName',
-            value: request.body.lName
-        }, {
-            name: 'ListTemplateType',
-            value: request.body.listTemplateType
-        })
-    ps.invoke().then(output=>{
+        name: 'ListName',
+        value: request.body.lName
+    }, {
+        name: 'ListTemplateType',
+        value: request.body.listTemplateType
+    } ])
+    ps.invoke().then(output => {
         response.send(output)
     })
 })

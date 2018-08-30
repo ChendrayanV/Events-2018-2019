@@ -5,10 +5,11 @@ param(
     [string]
     $ListName,
 
-    [Microsoft.SharePoint.Client.ListTemplateType]
     [ValidateSet('GenericList' , 'Announcements')]
     $ListTemplateType
 )
+Import-Module .\assemblies\Microsoft.SharePoint.Client.dll
+Import-Module .\assemblies\Microsoft.SharePoint.Client.UserProfiles.dll
 $config = [xml](Get-Content .\config\config.xml)
 $admin = $config.config.snow.userName
 $password = $config.config.snow.password | ConvertTo-SecureString -AsPlainText -Force 
@@ -16,7 +17,7 @@ $Credential = New-Object pscredential -ArgumentList ($admin, $password)
 $Uri = "https://dev42835.service-now.com/api/now/table/incident?sysparm_fields=number,state,sys_id"
 $Body = @{
     category            = "Software"
-    "caller_id"         = $Caller_id
+    "caller_id"         = $Callerid
     "contact_type"      = "Self-service"
     impact              = "3 - Low"
     urgency             = "3 - Low"
@@ -38,8 +39,8 @@ $spoClientContext.Load($Web)
 $spoClientContext.ExecuteQuery()
 $ListCreationInformation = [Microsoft.SharePoint.Client.ListCreationInformation]::new()
 $ListCreationInformation.Title = $ListName
-$ListCreationInformation.TemplateType = $ListTemplateType
-$Listc = $Web.Lists.Add($ListCreationInformation)
+$ListCreationInformation.TemplateType = [Microsoft.SharePoint.Client.ListTemplateType]$ListTemplateType
+$ListC = $Web.Lists.Add($ListCreationInformation)
 $spoClientContext.ExecuteQuery()
 $spoClientContext.Dispose()
 # Start-Sleep 15
