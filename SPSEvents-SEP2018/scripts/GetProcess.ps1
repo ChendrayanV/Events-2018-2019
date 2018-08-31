@@ -1,3 +1,3 @@
 Get-Process | 
-Select-Object Name , DisplayName , Status -First 10 | 
+Select-Object ProcessName , Id , Handles -First 10 | 
 ConvertTo-Json -Compress
