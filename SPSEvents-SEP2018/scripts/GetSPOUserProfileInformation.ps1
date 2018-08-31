@@ -1,8 +1,8 @@
 Import-Module .\assemblies\Microsoft.SharePoint.Client.dll
 Import-Module .\assemblies\Microsoft.SharePoint.Client.UserProfiles.dll
-
-$userName = ""
-$adminPassword = "" | ConvertTo-SecureString -AsPlainText -Force
+$config = [xml](Get-Content .\config\config.xml)
+$userName = $config.config.sharepoint.userName
+$adminPassword = $config.config.sharepoint.password | ConvertTo-SecureString -AsPlainText -Force
 $spoCredential = [Microsoft.SharePoint.Client.SharePointOnlineCredentials]::new($userName, $adminPassword)
 $spoClientContext = [Microsoft.SharePoint.Client.ClientContext]::new("https://chensoffice365-admin.sharepoint.com")
 $spoClientContext.Credentials = $spoCredential

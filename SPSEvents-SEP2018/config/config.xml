@@ -1,10 +1,10 @@
 <config>
     <snow>
-        <userName></userName>
-        <password></password>
+        <userName>admin</userName>
+        <password>India890*</password>
     </snow>
     <sharepoint>
-        <userName></userName>
-        <password></password>
+        <userName>chendrayan@chensoffice365.onmicrosoft.com</userName>
+        <password>India890*</password>
     </sharepoint>
 </config>
