@@ -30,6 +30,8 @@ Step 4: Add the route URL in service hooks wizard.
 
 ![Image5](https://github.com/ChendrayanV/Events-2018-2019/blob/master/DevOps-SEP2018/images/S5.png)
 
+![Image6](https://github.com/ChendrayanV/Events-2018-2019/blob/master/DevOps-SEP2018/images/S6.png)
+
 Step 5: Push the code from client machine which fires the event and calls PowerShell script to create a VSTS work item.
 
 Step 6: PowerShell Create VSTS Work Item

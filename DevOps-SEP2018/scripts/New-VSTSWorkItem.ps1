@@ -1,5 +1,5 @@
 # PLEASE DO NOT USE CLEAR TEXT PASSWORD - THIS IS A DEMO CODE USED IN HANDS ON TRAINING
-$configuration = [xml](Get-Content .\config\config.xml)
+$configuration = [xml](Get-Content C:\projects\Events-2018-2019\DevOps-SEP2018\config\config.xml)
 # Live ID User Name
 $userName = $configuration.configuration.userName
 # Live ID Password
