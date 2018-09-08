@@ -8,4 +8,4 @@ Repository to share event contents
 
 ## SPSEvents | [Bangalore 2018](http://www.spsevents.org/city/Bangalore/Bangalore2018/)
 
-**September 1, 2018**: [Use PowerShell and Node.js to work with SharePoint data](http://)
+**September 1, 2018**: [Use PowerShell and Node.js to work with SharePoint data](https://github.com/ChendrayanV/Events-2018-2019/blob/master/SPSEvents-SEP2018/Use%20Node.js%20and%20PowerShell%20to%20work%20with%20SharePoint%20data.pptx)
