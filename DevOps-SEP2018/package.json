@@ -1,0 +1,14 @@
+{
+  "name": "devops-sep2018",
+  "version": "1.0.0",
+  "description": "A Web Listener / Server for Web Hooks Demo! ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chendrayan Venkatesan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
