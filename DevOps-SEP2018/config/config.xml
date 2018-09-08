@@ -2,4 +2,8 @@
     <instancename></instancename>
     <userName></userName>
     <password></password>
+    <snow>
+        <userName></userName>
+        <password></password>
+    </snow>
 </configuration>
