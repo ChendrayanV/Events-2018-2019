@@ -8,7 +8,7 @@ $credential = New-Object pscredential -ArgumentList ($userName,$password)
 $Values = Import-Csv .\WIT.csv
 foreach ($Value in $Values) {
     $RestParams = @{
-        Uri         = "https://about-powershell.visualstudio.com/servicenow/_apis/wit/workitems/`$task?api-version=1.0"   
+        Uri         = "https://$($configuration.configuration.instancename).visualstudio.com/servicenow/_apis/wit/workitems/`$task?api-version=1.0"   
         ContentType = 'application/json-patch+json'
         Method      = "Patch"
         Credential  = $credential
