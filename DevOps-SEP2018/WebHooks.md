@@ -20,3 +20,12 @@ app.post('/servicenow/vsts', function (request, response) {
 
 Step 4: Add the route URL in service hooks wizard.
 
+![alt text](https://github.com/ChendrayanV/Events-2018-2019/blob/master/DevOps-SEP2018/images/S1.png)
+
+![alt text](https://github.com/ChendrayanV/Events-2018-2019/blob/master/DevOps-SEP2018/images/S2.png)
+
+![alt text](https://github.com/ChendrayanV/Events-2018-2019/blob/master/DevOps-SEP2018/images/S3.png)
+
+![alt text](https://github.com/ChendrayanV/Events-2018-2019/blob/master/DevOps-SEP2018/images/S4.png)
+
+![alt text](https://github.com/ChendrayanV/Events-2018-2019/blob/master/DevOps-SEP2018/images/S5.png)
