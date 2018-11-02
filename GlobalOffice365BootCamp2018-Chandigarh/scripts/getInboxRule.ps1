@@ -1,9 +1,9 @@
 Import-Module .\assemblies\Microsoft.Exchange.WebServices.dll
 $ExchangeService = [Microsoft.Exchange.WebServices.Data.ExchangeService]::new()
 $Cred = "India890*" | ConvertTo-SecureString -AsPlainText -Force
-$ExchangeService.Credentials = [System.Net.NetworkCredential]::new("chendrayan@chensoffice365.onmicrosoft.com",$Cred)
+$ExchangeService.Credentials = [System.Net.NetworkCredential]::new("chendrayan@chensoffice365.onmicrosoft.com", $Cred)
 $ExchangeService.ImpersonatedUserId = [Microsoft.Exchange.WebServices.Data.ImpersonatedUserId]::new(
-[Microsoft.Exchange.WebServices.Data.ConnectingIdType]::SmtpAddress,"chendrayan@chensoffice365.onmicrosoft.com")
+    [Microsoft.Exchange.WebServices.Data.ConnectingIdType]::SmtpAddress, "chendrayan@chensoffice365.onmicrosoft.com")
 $ExchangeService.Url = "https://outlook.office365.com/EWS/Exchange.asmx"
 $RuleCollection = $ExchangeService.GetInboxRules()
 
