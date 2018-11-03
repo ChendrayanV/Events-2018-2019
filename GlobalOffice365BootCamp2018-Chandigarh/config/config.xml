@@ -1,4 +1,4 @@
 <configuration>
-<username>UserName</username>
-<password>Password</password>
+    <username>admin@tenant.onmicrosoft.com</username>
+    <password>Password</password>
 </configuration>

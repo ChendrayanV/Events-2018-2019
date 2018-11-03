@@ -43,6 +43,13 @@ html {
             border-radius: 50%;
             display: inline-block;
         }
+        .dotRED {
+            height: 15px;
+            width: 15px;
+            background-color: RED;
+            border-radius: 50%;
+            display: inline-block;
+        }
         "
         style -Content {
             $r 
@@ -88,6 +95,9 @@ html {
                         }
                         if ($Item.Categories -as [string] -like "Orange*") {
                             h3 -class "dotOrange"
+                        }
+                        if ($Item.Categories -as [string] -like "Red*") {
+                            h3 -class "dotRED"
                         }
                     }
                 }
