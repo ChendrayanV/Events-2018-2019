@@ -1,14 +1,16 @@
 Import-Module .\assemblies\Microsoft.Exchange.WebServices.dll
 $ExchangeService = [Microsoft.Exchange.WebServices.Data.ExchangeService]::new()
-$Cred = "India890*" | ConvertTo-SecureString -AsPlainText -Force
-$ExchangeService.Credentials = [System.Net.NetworkCredential]::new("chendrayan@chensoffice365.onmicrosoft.com",$Cred)
+$Config = [xml](Get-Content .\config\config.xml)
+$ExchangeService.Credentials = [System.Net.NetworkCredential]::new(
+    $Config.configuration.username, ($Config.configuration.password | ConvertTo-SecureString -AsPlainText -Force)
+)
 $ExchangeService.ImpersonatedUserId = [Microsoft.Exchange.WebServices.Data.ImpersonatedUserId]::new(
-[Microsoft.Exchange.WebServices.Data.ConnectingIdType]::SmtpAddress,"chendrayan@chensoffice365.onmicrosoft.com")
+    [Microsoft.Exchange.WebServices.Data.ConnectingIdType]::SmtpAddress, "chendrayan@chensoffice365.onmicrosoft.com")
 $ExchangeService.Url = "https://outlook.office365.com/EWS/Exchange.asmx"
 $ItemCollection = $ExchangeService.FindItems(
     [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::Inbox,
     [Microsoft.Exchange.WebServices.Data.ItemView]::new(20)
-    )
+)
 
 html {
     head {
@@ -70,7 +72,7 @@ html {
                         $Item.IsRead
                     }
                     td -Content {
-                        if($Item.IsRead) {
+                        if ($Item.IsRead) {
                             [char]0x2764
                         }
                         else {
@@ -78,13 +80,13 @@ html {
                         }
                     }
                     td -Content {
-                        if($Item.Categories -as [string] -like "Green*") {
+                        if ($Item.Categories -as [string] -like "Green*") {
                             h3 -class "dotGreen"
                         }
-                        if($Item.Categories -as [string] -like "Blue*") {
+                        if ($Item.Categories -as [string] -like "Blue*") {
                             h3 -class "dotBlue"
                         }
-                        if($Item.Categories -as [string] -like "Orange*") {
+                        if ($Item.Categories -as [string] -like "Orange*") {
                             h3 -class "dotOrange"
                         }
                     }

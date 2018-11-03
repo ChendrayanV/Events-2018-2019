@@ -2,10 +2,10 @@ Import-Module .\assemblies\Microsoft.SharePoint.Client.dll
 Import-Module .\assemblies\Microsoft.SharePoint.Client.Runtime.dll
 
 $SPOClientContext = [Microsoft.SharePoint.Client.ClientContext]::new("https://chensoffice365.sharepoint.com/")
-$Securepassword = "India890*" | ConvertTo-SecureString -AsPlainText -Force
+$Config = [xml](Get-Content .\config\config.xml)
 $SPOClientContext.Credentials = [Microsoft.SharePoint.Client.SharePointOnlineCredentials]::new(
-    "chendrayan@chensoffice365.onmicrosoft.com" , 
-    $Securepassword
+    $Config.configuration.username , 
+    ($Config.configuration.password | ConvertTo-SecureString -AsPlainText -Force)
 )
 $ListCollection = $SPOClientContext.Web.Lists
 $SPOClientContext.Load($ListCollection)

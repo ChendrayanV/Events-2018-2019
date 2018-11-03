@@ -1,7 +1,9 @@
 Import-Module .\assemblies\Microsoft.Exchange.WebServices.dll
 $ExchangeService = [Microsoft.Exchange.WebServices.Data.ExchangeService]::new()
-$Cred = "India890*" | ConvertTo-SecureString -AsPlainText -Force
-$ExchangeService.Credentials = [System.Net.NetworkCredential]::new("chendrayan@chensoffice365.onmicrosoft.com", $Cred)
+$Config = [xml](Get-Content .\config\config.xml)
+$ExchangeService.Credentials = [System.Net.NetworkCredential]::new(
+    $Config.configuration.username, 
+    ($Config.configuration.password | ConvertTo-SecureString -AsPlainText -Force))
 $ExchangeService.ImpersonatedUserId = [Microsoft.Exchange.WebServices.Data.ImpersonatedUserId]::new(
     [Microsoft.Exchange.WebServices.Data.ConnectingIdType]::SmtpAddress, "chendrayan@chensoffice365.onmicrosoft.com")
 $ExchangeService.Url = "https://outlook.office365.com/EWS/Exchange.asmx"

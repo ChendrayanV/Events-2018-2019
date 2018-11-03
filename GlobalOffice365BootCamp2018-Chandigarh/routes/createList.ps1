@@ -11,8 +11,10 @@ New-PolarisPostRoute -Path "/createList" -Scriptblock {
     }
     $Result = $Data | ConvertTo-Json | ConvertFrom-Json
     $SPOClientContext = [Microsoft.SharePoint.Client.ClientContext]::new("https://chensoffice365.sharepoint.com/")
-    $Securepassword = "India890*" | ConvertTo-SecureString -AsPlainText -Force
-    $SPOClientContext.Credentials = [Microsoft.SharePoint.Client.SharePointOnlineCredentials]::new("chendrayan@chensoffice365.onmicrosoft.com" , $Securepassword)
+    $Config = [xml](Get-Content .\config\config.xml)
+    $SPOClientContext.Credentials = [Microsoft.SharePoint.Client.SharePointOnlineCredentials]::new(
+        $Config.configuration.username , $Config.configuration.password
+    )
     $ListCreationInformation = [Microsoft.SharePoint.Client.ListCreationInformation]::new()
 
     $ListCreationInformation.Title = $Result.title 
@@ -43,6 +45,7 @@ New-PolarisPostRoute -Path "/createList" -Scriptblock {
     $res = [pscustomobject]@{
         ListName       = $NewList.Title
         EnabledCrawled = $NewList.NoCrawl
+        demo           = "demo"
     } | ConvertTo-Json
     $Response.Send($res)
 }
