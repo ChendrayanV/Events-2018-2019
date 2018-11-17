@@ -14,6 +14,10 @@ Repository to share event contents
 
 **September 07, 2018**: [VSTS | WebHooks | PowerShell](https://github.com/ChendrayanV/Events-2018-2019/tree/master/DevOps-SEP2018)
 
+## Global Office365 Developers Bootcamp 2018, Chandigarh | [Event Information]()
+
+**November 03, 2018** | (PowerShell + Office365 = Deliver Excellence)[https://github.com/ChendrayanV/Events-2018-2019/tree/master/GlobalOffice365BootCamp2018-Chandigarh]
+
 ## Xamarin for Beginners | [Xamarin Event - App Innovation Circle]()
 
 **November 16, 2018** : []()
