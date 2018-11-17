@@ -13,3 +13,7 @@ Repository to share event contents
 ## DevOps | [DevOps Event - App Innovation Circle]()
 
 **September 07, 2018**: []()
+
+## Xamarin for Beginners | [Xamarin Event - App Innovation Circle]()
+
+**November 16, 2018** : []()
