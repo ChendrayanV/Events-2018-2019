@@ -12,7 +12,7 @@ Repository to share event contents
 
 ## DevOps | [DevOps Event - App Innovation Circle]()
 
-**September 07, 2018**: []()
+**September 07, 2018**: [VSTS | WebHooks | PowerShell](https://github.com/ChendrayanV/Events-2018-2019/tree/master/DevOps-SEP2018)
 
 ## Xamarin for Beginners | [Xamarin Event - App Innovation Circle]()
 
