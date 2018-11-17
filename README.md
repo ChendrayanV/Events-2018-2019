@@ -16,7 +16,7 @@ Repository to share event contents
 
 ## Global Office365 Developers Bootcamp 2018, Chandigarh | [Event Information]()
 
-**November 03, 2018** | (PowerShell + Office365 = Deliver Excellence)[https://github.com/ChendrayanV/Events-2018-2019/tree/master/GlobalOffice365BootCamp2018-Chandigarh]
+**November 03, 2018** | [PowerShell + Office365 = Deliver Excellence](https://github.com/ChendrayanV/Events-2018-2019/tree/master/GlobalOffice365BootCamp2018-Chandigarh)
 
 ## Xamarin for Beginners | [Xamarin Event - App Innovation Circle]()
 
