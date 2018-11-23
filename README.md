@@ -20,4 +20,4 @@ Repository to share event contents
 
 ## Xamarin for Beginners | [Xamarin Event - App Innovation Circle]()
 
-**November 16, 2018** : []()
+**November 16, 2018** : []( )
